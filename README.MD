@@ -1,10 +1,10 @@
 # MIRTH CONNECT EXAMPLE ON DOCKER
 
-The goal of this multi-container docker is to test the functionalities of Mirth Connect. In particular, we will use Mirth Connect to read an HL7 message of type *(ADT-A01) Admit a patient*, to transform it, and then to add it to a mysql db.
+The goal of this multi-container docker is to test the functionalities of **Mirth Connect**. In particular, we will use **Mirth Connect** to read an HL7 message of type *(ADT-A01) Admit a patient*, to transform it, and then to add it to a mysql db.
 
 The channel `./mirth-connect/channel.xml` will read all the **hl7** messages (with format ADT-A01) located in the container **mirth-connect** in the directory `/home/Pickup`. Each message succesfully read, will be moved to `/home/Dropoff`; otherwise, the message will be relocated to `/home/Error`. In addition, every succesfull message will be transformed and added to the table **PERSON** in the db **mirth-test**.
 
-
+A **Mirth-Connect** image can be found [here](https://hub.docker.com/r/marlycormar/mirth-connect-3.5.1/) with instructions [here](https://github.com/marlycormar/mirth-connect-3.5.1) on how to use it.
 
 ## Configuration
 1. Create all the containers in detached mode:
